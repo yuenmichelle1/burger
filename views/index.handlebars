@@ -1,42 +1,50 @@
 <div class="container row">
-	<div class="col-12 text-center" id="top-bar">
+	<div class="col-md-12 text-center" id="top-bar">
 		<h1> Eat-Da-Burger! </h1>
 	</div>
-
-	<div class="col-6 text-center" class="task">
-		<div class="row">
-			{{#each burgers}}
-				{{#unless this.devoured}}
-				<div class="col-9 text-center">
-					<pre>
-						{{this.id}}. {{this.burger_name}}
-					</pre>
-				</div>
-
-				<div class="col-3 text-center">
-					<form method="POST" action="/burgers/update?_method=PUT" class="button-size">
-						<input type="hidden" type="text" name="burger_id" value={{this.id}}>
-						<br>
-						<button type="submit" class="btn btn-default">Devour it!</button>
-					</form>
-				</div>
-				{{/unless}}
-			{{/each}}
-		</div>
-	</div>
-
-	<div class="col-6 text-center">
-		{{#each burgers}}
-			{{#if this.devoured}}
-				<input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
-			{{/if}}
-		{{/each}}
-	</div>
 </div>
+<div class="container row">
+  <center>
+    <!-- Left side Not yet devoured -->
+    <div class="col-md-6">
+      <h4 class="red_font">Ready to eat!</h4>
+      <div id="ready_to_eat">
+        {{#each burger}}
+          {{#unless devoured}}
+          <form action="burger/eat/{{id}}" method="POST">
+            <div class="input-group">
+              <li class="form-control">{{id}}. {{burger_name}}</li>
+                <span class="input-group-btn">
+                  <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+                </span>
+            </div>
+          </form>
+          {{/unless}}
+        {{/each}}
+
+      </div>
+    </div>
+
+    <!-- Right side (already eaten) -->
+    <div class="col-md-6">
+      <h4 class="red_font">Already eaten!</h4>
+      <div id="already_eaten">
+        {{#each burger}}
+          {{#if this.devoured}}
+            <div class="input-group">
+              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+            </div>
+          {{/if}}
+        {{/each}}
+
+      </div>
+    </div>
+  </center>
 
 <div class="container row">
-	<div class="col-12 text-center enter_section">
-		<form action="/burgers/create" method="POST">
+    <h3 class="text-center col-md-12">Make A New Burger</h3>
+	<div class="col-md-12 text-center enter_section">
+		<form class="center-block" action="/burgers/create" method="POST">
 			<input type="text" class="form-control" name="burger_name" value="" id="enter_text">
 			<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
 		</form>
