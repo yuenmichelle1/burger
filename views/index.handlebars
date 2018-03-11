@@ -11,7 +11,7 @@
       <div id="ready_to_eat">
         {{#each burger}}
           {{#unless devoured}}
-          <form action="burger/eat/{{id}}" method="POST">
+          <form action="burger/eat/{{id}}" method="PUT">
             <div class="input-group">
               <li class="form-control">{{id}}. {{burger_name}}</li>
                 <span class="input-group-btn">
@@ -41,15 +41,18 @@
     </div>
   </center>
 
-<div class="container row">
+<form class="create-form">
     <h3 class="text-center col-md-12">Make A New Burger</h3>
-	<div class="col-md-12 text-center enter_section">
-		<form class="center-block" action="/burgers/create" method="POST">
-			<input type="text" class="form-control" name="burger_name" value="" id="enter_text">
-			<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
-		</form>
+	<div class="col-md-12 text-center enter_section form-group">
+			<input type="text" class="form-control" name="burger_name" value="" id="burg">
+	</div>
+    <div class="form-group text-center center-block">
+        <label for="devoured">Devoured?</label><br>
+        <input type="radio" name="devoured" value="1" checked> Eaten?<br>
+        <input type="radio" name="devoured" value="0"> Not Eaten
+        <button type="submit" class="btn btn-primary center-block" id="text-enter-button">Submit</button>
 		<p>
 			Enter a burger you want to eat and click the Submit button.
 		</p>
-	</div>
-</div>
+    </div>
+</form>

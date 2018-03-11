@@ -6,14 +6,14 @@ var burger = {
             cb(res);
         });
     },
-    insertOne: function(cols, vals, cb){
+    insertOne: function(vals, cb){
         // vals is an object that looks like eg. {burger_name: Hamburger}
-        orm.insertOne("burgers", cols, vals, function(res){
+        orm.insertOne("burgers", vals, function(res){
             cb(res);
         });
     }, 
     updateOne: function(val, condition, cb){
-        orm.updateOne("burgers", vals, condition, function(res){
+        orm.updateOne("burgers", val, condition, function(res){
             cb(res);
         })
     }

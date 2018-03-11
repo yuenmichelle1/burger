@@ -12,11 +12,11 @@ var orm = {
       }
     });
   },
-  insertOne: function(table, cols, val, cb) {
+  insertOne: function(table, val, cb) {
     // val is an object that the user wants to insert eg {burger_name: Cheeseburger}
-    var queryString = `INSERT INTO ${table} (${cols}) VALUES (${val})`;
+    var queryString = `INSERT INTO ${table} SET ?`;
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, val, function(err, result) {
       if (err) {
         throw err;
       } else {

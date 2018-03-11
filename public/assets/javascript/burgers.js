@@ -26,8 +26,8 @@ $(function() {
       event.preventDefault();
   
       var newburger = {
-        name: $("#burg").val().trim(),
-        devoured: $("[name=devoured]:checked").val().trim()
+        burger_name: $("#burg").val(),
+        devoured: $("[name=devoured]:checked").val()
       };
   
       // Send the POST request.
@@ -41,6 +41,7 @@ $(function() {
           location.reload();
         }
       );
+      console.log(newburger);
     });
   });
   
