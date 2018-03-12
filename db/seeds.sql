@@ -1,6 +1,6 @@
-INSERT INTO burgers (burger_name) VALUES ('Cheeseburger');
-INSERT INTO burgers (burger_name) VALUES ('Hamburger');
+INSERT INTO burgers (burger_name) VALUES ('Krusty Burger');
+INSERT INTO burgers (burger_name) VALUES ('Double Krustyburger');
 INSERT INTO burgers (burger_name) VALUES ('Double Double');
-INSERT INTO burgers (burger_name) VALUES ('Big Mac');
-INSERT INTO burgers (burger_name) VALUES ('Turkey Burger');
+INSERT INTO burgers (burger_name) VALUES ('Ribwich');
+INSERT INTO burgers (burger_name) VALUES ('Krabby Patty');
 INSERT INTO burgers (burger_name) VALUES ('Grilled Cheese');
