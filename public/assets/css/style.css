@@ -2,7 +2,7 @@ body {
    background-image: url("../images/Krusty_Burger.png");
    color: white;
    background-repeat: no-repeat;
-   background-size: auto;
+   background-size: cover;
 }
 
 enter_section {

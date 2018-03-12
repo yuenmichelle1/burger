@@ -15,7 +15,6 @@ var orm = {
   insertOne: function(table, val, cb) {
     // val is an object that the user wants to insert eg {burger_name: Cheeseburger}
     var queryString = `INSERT INTO ${table} SET ?`;
-    console.log(queryString);
     connection.query(queryString, val, function(err, result) {
       if (err) {
         throw err;
