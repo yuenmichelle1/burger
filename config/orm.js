@@ -25,9 +25,9 @@ var orm = {
     });
   },
   // condition looks like eg. id = 4
-  updateOne: function(table, val, condition, cb) {
-    var queryString = `UPDATE ${table} SET WHERE id=${condition}`;
-    connection.query(queryString, function(err, result) {
+  updateOne: function(table, vals, condition, cb) {
+    var queryString = `UPDATE ${table} SET ? WHERE ${condition};`;
+    connection.query(queryString, vals, function(err, result) {
       if (err) {
         throw err;
       }

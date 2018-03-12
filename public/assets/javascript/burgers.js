@@ -5,13 +5,13 @@ $(function() {
       var newdevoured = $(this).data("devoured");
   
       var newdevouredState= {
-        devoured: newdevoured
+        devoured: 1
       };
   
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: newdevoured
+        data: newdevouredState
       }).then(
         function() {
           console.log("changed sleep to", newdevoured);
